@@ -43,6 +43,8 @@ export function SearchPanel({ locations }: { locations: SelectLocation[] }) {
     const checkinParam = searchParams.get(SearchParams.CHECKIN)
     const checkoutParam = searchParams.get(SearchParams.CHECKOUT)
 
+    console.log("Location param:", locationParam);
+    
     if (locationParam) setLocation(locationParam)
 
     const checkInDate = checkinParam ? new Date(checkinParam) : undefined
@@ -99,6 +101,8 @@ export function SearchPanel({ locations }: { locations: SelectLocation[] }) {
 
     push(constructUrlWithParams("/cars", newParams))
   }
+  console.log("Locations array:", locations[0]);
+
 
   return (
     <form onSubmit={submitForm} className="w-full">

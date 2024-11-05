@@ -93,7 +93,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <strong>eduamdev</strong>
+                  <strong>ABHINAV & ASHUTOSH</strong>
                 </a>
               </Button>
               .

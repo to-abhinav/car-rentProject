@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm"
 
-import { db } from ".."
+import { db } from "../index"
 import { SelectCar } from "../schema"
 
 export async function getCars() {

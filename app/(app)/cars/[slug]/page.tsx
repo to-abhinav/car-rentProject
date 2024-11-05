@@ -12,7 +12,6 @@ import { HeadsetIcon } from "@/components/icons/headset"
 import { KidIcon } from "@/components/icons/kid"
 import { NavigationIcon } from "@/components/icons/navigation"
 import { WifiIcon } from "@/components/icons/wifi"
-
 import { ReserveCard } from "./components/reserve-card"
 
 export async function generateMetadata({
@@ -45,18 +44,23 @@ export default async function CarDetailsPage({ params }: CarDetailsPageProps) {
   }
 
   const carInteriorUrl = getCldImageUrl({
-    src: "carhive/cars/car-interior_d6nmyn",
+    src: "https://res.cloudinary.com/dlkre2bxo/image/upload/v1730814067/dsc8679-1658333391.jpg_xn9qkq.jpg",
     width: 100, // Resize the original file to a smaller size
   })
   const carDoorPanelUrl = getCldImageUrl({
-    src: "carhive/cars/car-door-panel_puxkbc",
-    width: 50,
+    src: "https://res.cloudinary.com/dlkre2bxo/image/upload/v1730815660/x3-interior-front-left-door-pad_vhi05w.jpg",
+    width: 50,//door panel image
   })
   const carSeatUrl = getCldImageUrl({
-    src: "carhive/cars/car-seat_rnzgv6",
-    width: 50,
+    src: "https://res.cloudinary.com/dlkre2bxo/image/upload/v1730815562/cq5dam.resized.img.890.medium.time1592757714051_kxmgoo.jpg",
+    width: 50,//car seat
   })
 
+
+  console.log("carInteriorUrl", carInteriorUrl);
+  console.log("carDoorPanelUrl", carDoorPanelUrl);
+  console.log("carSeatUrl", carSeatUrl);
+  
   const [carInteriorDataUrl, carDoorPanelDataUrl, carSeatDataUrl] =
     await Promise.all([
       convertImageUrlToDataUrl(carInteriorUrl),
@@ -83,18 +87,16 @@ export default async function CarDetailsPage({ params }: CarDetailsPageProps) {
             <div className="relative overflow-hidden md:col-span-3 md:row-span-2 md:rounded-l-2xl">
               {carInteriorDataUrl ? (
                 <CldImage
-                  src={`carhive/cars/car-interior_d6nmyn`}
+                  src={`https://res.cloudinary.com/dlkre2bxo/image/upload/v1730814067/dsc8679-1658333391.jpg_xn9qkq.jpg`}//car interior image
                   alt="car interior"
                   priority
                   fill
                   sizes="66vw"
                   className="object-cover"
-                  placeholder="blur"
-                  blurDataURL={carInteriorDataUrl}
                 />
               ) : (
                 <CldImage
-                  src={`carhive/cars/car-interior_d6nmyn`}
+                  src={`https://res.cloudinary.com/dlkre2bxo/image/upload/v1730814067/dsc8679-1658333391.jpg_xn9qkq.jpg`}
                   alt="car interior"
                   priority
                   fill
@@ -106,18 +108,16 @@ export default async function CarDetailsPage({ params }: CarDetailsPageProps) {
             <div className="relative col-span-1 row-span-1 hidden overflow-hidden rounded-tr-2xl md:block">
               {carDoorPanelDataUrl ? (
                 <CldImage
-                  src={`carhive/cars/car-door-panel_puxkbc`}
+                  src={`https://res.cloudinary.com/dlkre2bxo/image/upload/v1730815660/x3-interior-front-left-door-pad_vhi05w.jpg`}//cardoor
                   alt="car door panel"
                   priority
                   fill
                   sizes="33vw"
                   className="object-cover"
-                  placeholder="blur"
-                  blurDataURL={carDoorPanelDataUrl}
                 />
               ) : (
                 <CldImage
-                  src={`carhive/cars/car-door-panel_puxkbc`}
+                  src={`https://res.cloudinary.com/dlkre2bxo/image/upload/v1730815660/x3-interior-front-left-door-pad_vhi05w.jpg`}
                   alt="car door panel"
                   priority
                   fill
@@ -129,18 +129,16 @@ export default async function CarDetailsPage({ params }: CarDetailsPageProps) {
             <div className="relative col-span-1 row-span-1 hidden overflow-hidden rounded-br-2xl md:block">
               {carSeatDataUrl ? (
                 <CldImage
-                  src={`carhive/cars/car-seat_rnzgv6`}
+                  src={`https://res.cloudinary.com/dlkre2bxo/image/upload/v1730815562/cq5dam.resized.img.890.medium.time1592757714051_kxmgoo.jpg`}//car seat
                   alt="car seat"
                   priority
                   fill
                   sizes="33vw"
                   className="object-cover"
-                  placeholder="blur"
-                  blurDataURL={carSeatDataUrl}
                 />
               ) : (
                 <CldImage
-                  src={`carhive/cars/car-seat_rnzgv6`}
+                  src={`hhttps://res.cloudinary.com/dlkre2bxo/image/upload/v1730815562/cq5dam.resized.img.890.medium.time1592757714051_kxmgoo.jpg`}
                   alt="car seat"
                   priority
                   fill
